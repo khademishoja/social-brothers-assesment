@@ -23,5 +23,26 @@ const Bloglist = () => {
     }
     getPost();
   }, []);
+  return (
+    <div>
+      <div className="row">
+        {post ? (
+          post.map((item) => {
+            return (
+              <BlogCard
+                key={item.id}
+                img_url={item.img_url}
+                category={item.category.name}
+                title={item.title}
+                content={item.content}
+              />
+            );
+          })
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
+    </div>
+  );
 };
 export default Bloglist;

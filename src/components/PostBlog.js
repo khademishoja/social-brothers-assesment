@@ -64,12 +64,16 @@ const Postblog = () => {
 
   return (
     <div>
-      <p style={{ color: "2B2B2B", fontFamily: "Inte" }}>
+      <p
+        className="titleForm"
+        style={{ color: "2B2B2B", fontFamily: "Inte", fontSize: "24px" }}
+      >
         Plats een blog bericht
       </p>
       <form onSubmit={onSubmit}>
         <label>Berichtnaam</label>
         <input
+          style={{ width: "403px" }}
           type="text"
           name="title"
           value={title}
@@ -80,6 +84,7 @@ const Postblog = () => {
 
         <label>Categorie</label>
         <select
+          style={{ width: "403px" }}
           id="category"
           value={category}
           onChange={onCategoryChanged}
@@ -118,6 +123,7 @@ const Postblog = () => {
             Kies bestand
           </label>
         </div>
+
         <label>Bericht</label>
         <textarea
           value={content}
@@ -125,7 +131,8 @@ const Postblog = () => {
           rows="10"
           required
         />
-        <button className="btn" type="submit">
+
+        <button className="btn1" type="submit">
           Bericht aanmaken
         </button>
       </form>
