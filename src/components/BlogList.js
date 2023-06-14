@@ -24,7 +24,7 @@ const Bloglist = () => {
     getPost();
   }, []);
   return (
-    <div>
+    <div className="bg-white">
       <div className="row">
         {post ? (
           post.map((item) => {
@@ -42,6 +42,7 @@ const Bloglist = () => {
           <p>Loading...</p>
         )}
       </div>
+      <button className="btn1">Meer laden</button>
     </div>
   );
 };

@@ -1,14 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Logo from "../images/logo.svg";
 import Stack from "react-bootstrap/Stack";
 import background from "../images/background.png";
 const Header = () => {
+  const location = useLocation();
   return (
     <header
       style={{
         backgroundImage: ` url(${background})`,
         backgroundRepeat: "no-repeat",
-        height: "208px",
+        height: "288px",
+        marginRight: "150px",
+        marginLeft: "150px",
       }}
     >
       <Stack direction="horizontal" gap={3}>
@@ -25,15 +28,24 @@ const Header = () => {
           ></img>
         </div>
         <div className="  ms-auto">
-          <Link to="/">Home</Link>
+          <NavLink className="nav-link" to="/">
+            Home
+          </NavLink>
         </div>
         <div>
           {" "}
-          <Link to="/blog" style={{ marginRight: "162px" }}>
+          <NavLink
+            className="nav-link"
+            to="/blog"
+            style={{ marginRight: "162px" }}
+          >
             Blog
-          </Link>
+          </NavLink>
         </div>
       </Stack>
+      <div className="Blog-text">
+        {location.pathname === "/blog" && <h1>Blog</h1>}
+      </div>
     </header>
   );
 };

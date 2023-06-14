@@ -2,6 +2,8 @@
 * {
   font-family: "Inter", sans-serif;
 }
+body {
+}
 /* .blogContainer {
   height: 507px;
   width: 1057px;
@@ -51,44 +53,57 @@ select {
   border-radius: 20px;
   font-size: 0.8rem;
 }
-
+.blogContainer {
+  margin-top: 80px;
+}
 .btn1 {
-  width: 50%;
   color: white;
   background-color: #f27623;
-  margin: 1.5rem auto 0;
+  margin: 2rem auto 0;
   padding: 0.5rem;
   border: none;
   border-radius: 15px;
 }
-.containerHome {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 1rem;
-  justify-items: center;
-}
 .blogCard {
-  margin: 10px;
-  min-width: 285px !important;
+  margin: 20px;
+  min-width: 290px !important;
+
   border-radius: 0 !important;
   padding: 0 !important;
 }
 .blogCard img {
   border-radius: 0 !important;
+  height: 100px;
 }
+.blogCard .card-text {
+  height: 90px;
+}
+.blogCard p {
+  text-overflow: ellipsis;
+}
+
 footer {
-  width: 100%;
+  /* width: 100%; */
   background-color: black;
-  padding: 0.5rem;
+  align-self: center;
+  padding: 0.4rem;
   text-align: center;
-  position: absolute;
+  position: relative;
   bottom: 0;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+.home-container {
+  padding: 10px;
 }
 footer p {
   color: rgb(255, 255, 255);
 }
-
+.page-link {
+  border-radius: 50%;
+  margin: 2px;
+  border: 1px solid none;
+}
 /* .row {
   background-color: violet;
   height: 659px;
@@ -96,3 +111,28 @@ footer p {
 .col {
   background-color: #f27623;
 } */
+.nav-link {
+  text-decoration: none;
+  color: #ffffff !important;
+  font-family: Inter;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  line-height: 21px !important;
+  padding: 10px !important;
+  margin-top: 32px;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid orange;
+}
+.Blog-text h1 {
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700px;
+  letter-spacing: 0;
+  line-height: 62px;
+  text-align: center;
+  align-items: center;
+}

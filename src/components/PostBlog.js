@@ -63,7 +63,7 @@ const Postblog = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-white">
       <p
         className="titleForm"
         style={{ color: "2B2B2B", fontFamily: "Inte", fontSize: "24px" }}
