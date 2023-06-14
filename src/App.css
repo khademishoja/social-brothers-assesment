@@ -175,6 +175,7 @@ footer p {
   color: #f27623 !important;
 }
 
+/* header */
 .nav-link {
   text-decoration: none;
   color: #ffffff !important;
@@ -188,9 +189,7 @@ footer p {
 }
 
 .nav-link.active {
-  border-bottom: 2px solid orange;
-  outline: none !important;
-  border: none !important;
+  border-bottom: 3px solid #e95e30;
 }
 .Blog-text h1 {
   margin: 0 auto;
