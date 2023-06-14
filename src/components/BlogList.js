@@ -25,7 +25,7 @@ const Bloglist = () => {
   }, []);
   return (
     <div className="bg-white">
-      <div className="row">
+      <div className="row justify-content-center m-4">
         {post ? (
           post.map((item) => {
             return (
@@ -41,8 +41,8 @@ const Bloglist = () => {
         ) : (
           <p>Loading...</p>
         )}
+        <button className="btn1">Meer laden</button>
       </div>
-      <button className="btn1">Meer laden</button>
     </div>
   );
 };

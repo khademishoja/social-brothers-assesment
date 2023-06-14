@@ -1,6 +1,6 @@
 const Blogcards = (props) => {
   return (
-    <div className="card blogCard col-md-5 overflow-hidden shadow bg-white ">
+    <div className="card blogCard col-md-5 overflow-hidden shadow bg-white gy-5">
       <img
         className="card-img-top"
         src={`https://frontend-case-api.sbdev.nl/storage/${props.img_url}`}
