@@ -2,23 +2,27 @@
 * {
   font-family: "Inter", sans-serif;
 }
+html,
 body {
+  height: 100% !important;
+  margin: 0;
+  min-height: 100vh !important;
 }
-/* .blogContainer {
-  height: 507px;
-  width: 1057px;
-} */
+.root {
+  min-height: 100% !important;
+}
+
 /* Form */
 form {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+
   margin: 24px;
 }
 .titleForm {
   color: #2b2b2b;
   font-family: "Concert One", cursive;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif !important;
   font-weight: 700;
   font-size: 24px;
 }
@@ -72,13 +76,25 @@ select {
   border: none;
   border-radius: 15px;
   align-self: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
+textarea {
+  width: 403px;
+  height: 214px;
+  background-color: #fafafa;
+}
+
+/* Card */
+
 .blogCard {
   margin: 20px;
   min-width: 290px !important;
   border: 0px !important;
   border-radius: 0 !important;
   padding: 0 !important;
+  height: 217px !important;
+  z-index: 1;
 }
 .blogCard img {
   border-radius: 0 !important;
@@ -94,16 +110,39 @@ select {
   text-overflow: ellipsis;
 }
 
-footer {
-  /* width: 100%; */
-  background-color: black;
-  align-self: center;
-  padding: 0.4rem;
-  text-align: center;
+.blogpostHeader {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   position: relative;
-  bottom: 0;
+}
+.blogpostHeader img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.blogpostHeader p {
+  color: white;
+  font-style: italic;
+  padding: 1rem 0.5rem 0.5rem;
+  font-size: 0.5rem;
+  z-index: 1;
+}
+
+/* Footer */
+
+footer {
+  background-color: black;
+  padding: 0.5rem;
+  height: 32px;
+
+  text-align: center;
   margin-left: 150px;
   margin-right: 150px;
+  position: sticky;
+  bottom: 0;
 }
 .home-container {
   padding: 10px;
@@ -111,6 +150,9 @@ footer {
 footer p {
   color: rgb(255, 255, 255);
 }
+
+/* Pagination */
+
 .page-link {
   margin: 2px;
   border: 0px !important;
@@ -119,28 +161,20 @@ footer p {
   color: #2b2b2b !important;
   border-radius: 50% !important;
   outline: none !important;
+  border: none !important;
 }
 
 .active > .page-link,
 .page-link.active {
-  background-color: #868686 !important;
-  outline: none !important;
+  background-color: #e7e7e7 !important;
 }
 .page-link:focus {
   border-color: #868686 !important;
-  outline: none !important;
 }
 .pagination_nextButton .page-link {
   color: #f27623 !important;
-  outline: none !important;
 }
-/* .row {
-  background-color: violet;
-  height: 659px;
-}
-.col {
-  background-color: #f27623;
-} */
+
 .nav-link {
   text-decoration: none;
   color: #ffffff !important;
@@ -155,6 +189,8 @@ footer p {
 
 .nav-link.active {
   border-bottom: 2px solid orange;
+  outline: none !important;
+  border: none !important;
 }
 .Blog-text h1 {
   margin: 0 auto;
@@ -165,9 +201,4 @@ footer p {
   line-height: 62px;
   text-align: center;
   align-items: center;
-}
-textarea {
-  width: 403px;
-  height: 214px;
-  background-color: #fafafa;
 }

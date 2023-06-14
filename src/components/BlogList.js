@@ -12,7 +12,7 @@ const Bloglist = () => {
     async function getPost() {
       try {
         const res = await axios.get(
-          `https://frontend-case-api.sbdev.nl/api/posts?page=${pageNumber}&perPage=4&sortBy=created_at&sortDirection=desc&searchPhrase=test ber&categoryId=1`,
+          `https://frontend-case-api.sbdev.nl/api/posts?page=${pageNumber}&perPage=4&sortBy=created_at`,
           {
             headers: {
               token: "pj11daaQRz7zUIH56B9Z",
@@ -20,7 +20,6 @@ const Bloglist = () => {
           }
         );
         setPost(res.data.data);
-        console.log(res.data.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -39,13 +38,18 @@ const Bloglist = () => {
                 category={item.category.name}
                 title={item.title}
                 content={item.content}
+                createdAt={item.created_at}
               />
             );
           })
         ) : (
           <p>Loading...</p>
         )}
-        <button className="btn1" onClick={onButtonClick}>
+        <button
+          className="btn1"
+          onClick={onButtonClick}
+          style={{ marginTop: "75px" }}
+        >
           Meer laden
         </button>
       </div>

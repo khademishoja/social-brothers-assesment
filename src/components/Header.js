@@ -12,6 +12,7 @@ const Header = () => {
         height: "288px",
         marginRight: "150px",
         marginLeft: "150px",
+        backgroundSize: "cover",
       }}
     >
       <Stack direction="horizontal" gap={3}>

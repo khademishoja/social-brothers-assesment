@@ -20,7 +20,7 @@ const Postblog = () => {
   };
   const onSubmit = async (e) => {
     e.preventDefault();
-    debugger;
+
     try {
       const formData = new FormData();
       formData.append("title", title);
@@ -37,7 +37,6 @@ const Postblog = () => {
           },
         }
       );
-      console.log(res);
     } catch (e) {
       console.log(e);
     }
@@ -73,7 +72,7 @@ const Postblog = () => {
           margin: "24px",
         }}
       >
-        Plats een blog bericht
+        Plaats een blog bericht
       </p>
       <form onSubmit={onSubmit}>
         <label>Berichtnaam</label>

@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 function App() {
   return (
-    <div className="bg-light ">
+    <div className="bg-light root ">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
