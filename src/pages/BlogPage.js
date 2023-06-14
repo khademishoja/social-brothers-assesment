@@ -13,7 +13,6 @@ const Blogpage = () => {
   };
   async function getPosts() {
     try {
-      debugger;
       const res = await axios.get(
         `https://frontend-case-api.sbdev.nl/api/posts?page=${currentPage}&perPage=8`,
         {
@@ -59,26 +58,8 @@ const Blogpage = () => {
           {numberOfPages ? (
             <div className="pagination justify-content-center">
               <Pagination>
-                {/* <Pagination.Prev
-                  disabled={currentPage === 1}
-                  onClick={() => handlePageChange(currentPage - 1)}
-                /> */}
-
                 {[...Array(numberOfPages)].map((_, index) => {
                   const pageNumber = index + 1;
-                  //const offset = Math.floor(currentPage / 5) * 5;
-                  //const displayPageNumber = offset + pageNumber;
-
-                  //return (
-                  // <Pagination.Item
-                  //   key={displayPageNumber}
-                  //   active={currentPage === displayPageNumber}
-                  //   onClick={() => handlePageChange(displayPageNumber)}
-                  // >
-                  //   {displayPageNumber}
-                  // </Pagination.Item>
-                  // );
-                  // Display the first page number
                   if (pageNumber === 1) {
                     return (
                       <Pagination.Item
@@ -90,12 +71,10 @@ const Blogpage = () => {
                       </Pagination.Item>
                     );
                   } else {
-                    // Display ellipses if necessary
                     if (pageNumber === currentPage - 2 && currentPage > 4) {
                       return <Pagination.Ellipsis key="ellipsis-prev" />;
                     } else {
                       if (
-                        // Display the current page number
                         (pageNumber >= currentPage - 1 &&
                           pageNumber <= currentPage + 1) ||
                         (pageNumber === numberOfPages &&
@@ -112,14 +91,12 @@ const Blogpage = () => {
                         );
                       } else {
                         if (
-                          // Display ellipses if necessary
                           pageNumber === currentPage + 2 &&
                           currentPage < numberOfPages - 3
                         ) {
                           return <Pagination.Ellipsis key="ellipsis-next" />;
                         } else {
-                          // Display the last page number
-                          if (pageNumber === numberOfPages) {
+                          if (pageNumber === 20) {
                             return (
                               <Pagination.Item
                                 key={pageNumber}
@@ -138,7 +115,10 @@ const Blogpage = () => {
                 <Pagination.Next
                   disabled={currentPage === blogs}
                   onClick={() => handlePageChange(currentPage + 1)}
-                />
+                  className="pagination_nextButton"
+                >
+                  Volgende Pagina
+                </Pagination.Next>
               </Pagination>
             </div>
           ) : (

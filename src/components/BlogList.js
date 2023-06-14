@@ -4,11 +4,15 @@ import BlogCard from "../components/BlogCard";
 
 const Bloglist = () => {
   const [post, setPost] = useState();
+  const [pageNumber, setPageNumber] = useState(1);
+  const onButtonClick = () => {
+    setPageNumber(pageNumber + 1);
+  };
   useEffect(() => {
     async function getPost() {
       try {
         const res = await axios.get(
-          "https://frontend-case-api.sbdev.nl/api/posts?page=1&perPage=4&sortBy=created_at&sortDirection=desc&searchPhrase=test ber&categoryId=1",
+          `https://frontend-case-api.sbdev.nl/api/posts?page=${pageNumber}&perPage=4&sortBy=created_at&sortDirection=desc&searchPhrase=test ber&categoryId=1`,
           {
             headers: {
               token: "pj11daaQRz7zUIH56B9Z",
@@ -22,7 +26,7 @@ const Bloglist = () => {
       }
     }
     getPost();
-  }, []);
+  }, [pageNumber]);
   return (
     <div className="bg-white">
       <div className="row justify-content-center m-4">
@@ -41,7 +45,9 @@ const Bloglist = () => {
         ) : (
           <p>Loading...</p>
         )}
-        <button className="btn1">Meer laden</button>
+        <button className="btn1" onClick={onButtonClick}>
+          Meer laden
+        </button>
       </div>
     </div>
   );
